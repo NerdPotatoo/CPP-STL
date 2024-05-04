@@ -21,71 +21,65 @@ int main()
 {
     vector<int> v;
     // push_back()
-    cout << "Pushing element\n";
-    v.push_back(4);
-    v.push_back(5);
-    v.push_back(6);
+    v.push_back(4); // 4
+    v.push_back(5); // 4 5
+    v.push_back(6); // 4 5 6
     for(int i=0; i<v.size(); i++) cout<<v[i]<<" ";
-    
-    // size()
     cout<<endl;
-    cout<<"size - "<<v.size()<<endl;
+
+    // size()
+    cout<<v.size()<<endl; // 3
     
     // pop_back()
-    cout <<"Poping element\n";
-    v.pop_back();
+    v.pop_back(); // 4 5
     for(int i=0; i<v.size(); i++) cout<<v[i]<<" ";
     cout<<endl;
-    cout<<"size - "<<v.size()<<endl;
+    cout<<v.size()<<endl; // 2
     
     // resize();
-    cout<<"Resizing vector\n";
-    v.resize(5);
+    v.resize(5); // 4 5 0 0 0 
     for(int i=0; i<v.size(); i++) cout<<v[i]<<" ";
     cout<<endl;
-    v.resize(2);
+    v.resize(2); // 4 5
 
     // begin() & end()
-    cout << "Using Begin() & End()\n";
-    cout<<*(v.begin())<<endl; // first 
-    cout<<*(v.begin()+1)<<endl; // second  
-    cout<<*(v.end())<<endl; // last
+    cout<<*(v.begin())<<endl; // 4
+    cout<<*(v.begin()+1)<<endl; // 5 
+    cout<<*(v.end()-1)<<endl; // 5
     
     // erase()
-    cout<< "Erasing elements\n";
-    v.push_back(6);
-    v.push_back(7);
-    v.push_back(9);
-    v.push_back(10);
-    v.push_back(11);
-    v.erase(v.begin()+2); // erase one element 
+    v.push_back(6); // 4 5 6
+    v.push_back(7); // 4 5 6 7
+    v.push_back(9); // 4 5 6 7 9
+    v.push_back(10); // 4 5 6 7 9 10
+    v.push_back(11); // 4 5 6 7 9 10 11
+    
+    v.erase(v.begin()+2); // erase one element {4 5 7 9 10 11}
     for(int i=0; i<v.size(); i++) cout<<v[i]<<" ";
     cout<<endl;
-    v.erase(v.begin()+1, v.begin()+3); // erase range
+
+    v.erase(v.begin()+1, v.begin()+3); // erase range {4 9 10 11}
     for(int i=0; i<v.size(); i++) cout<<v[i]<<" ";
     cout<<endl;
 
     // insert()
-    cout<<"Inserting elements\n";
-    v.insert(v.begin()+2, 8);
+    v.insert(v.begin()+2, 8); // 4 9 8 10 11
     for(int i=0; i<v.size(); i++) cout<<v[i]<<" ";
     cout<<endl;
 
     // reverse()
-    cout<<"Reversing a Vector\n";
-    reverse(v.begin(),v.end());
+    reverse(v.begin(),v.end()); // 11 10 8 9 4
     for(int i=0; i<v.size(); i++) cout<<v[i]<<" ";
     cout<<endl;
 
     // sort()
-    cout<<"Sorting a vector\n";
-    sort(v.begin(), v.end());
+    sort(v.begin(), v.end()); // 4 8 9 10 11
     for(int i=0; i<v.size(); i++) cout<<v[i]<<" ";
     cout<<endl;
 
     // clear() & empty()
-    v.clear();
-    cout<<"After clear size - "<<v.size()<<endl;
+    v.clear();// Empty vector 
+    cout<<v.size()<<endl; // 0
     if(v.empty()){
         cout<<"Empty"<<endl;
     }
