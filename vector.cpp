@@ -80,6 +80,7 @@ int main()
     // clear() & empty()
     v.clear();// Empty vector 
     cout<<v.size()<<endl; // 0
+    
     if(v.empty()){
         cout<<"Empty"<<endl;
     }
