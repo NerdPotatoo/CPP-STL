@@ -7,7 +7,7 @@ list.exe
 deque.exe
 set.exe
 unordered_set.exe
-map.exe
+
 unordered_map.exe
 queue.exe
 priority_queue.exe
@@ -15,3 +15,6 @@ important_func.exe
 binary_search.exe
 comparator_sort.exe
 .vscode
+# Ignore executables and object files
+*.exe
+*.o
